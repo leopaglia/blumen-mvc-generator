@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Services\Dependencies;
+
+use App\Services\{{class}}Repository;
+
+/**
+ * Class {{class}}Service
+ * @package App\Http\Services\Dependencies
+ */
+class {{class}}Controller {
+
+    /**
+     * @var {{class}}Repository ${{class}}Repository
+     */
+    protected ${{class}}Repository;
+
+    public function __construct({{class}}Repository ${{class}}Repository) {
+        $this->{{class}}Repository = ${{class}}Repository;
+    }
+
+}

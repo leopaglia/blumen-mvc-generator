@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use App\Models\Traits\LightModel;
+
+/**
+ * Class {{class}}
+ * @package App\Models
+ */
+class {{class}} extends Model {
+    use LightModel;
+
+    protected $table = '{{class}}';
+    protected $guarded = ['id'];
+    public $timestamps = false;
+
+}

@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Repositories;
+
+use App\Repositories\Base\BaseRepository;
+
+/**
+ * Class {{class}}Repository
+ * @package App\Repositories
+ */
+class {{class}}Repository extends BaseRepository {
+
+}
