@@ -1,14 +1,7 @@
 {
-  "name": "laracasts/generators",
+  "name": "Blumen/Generators",
   "description": "Extend Laravel 5's generators.",
-  "keywords": ["laravel", "generators"],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Jeffrey Way",
-      "email": "jeffrey@laracasts.com"
-    }
-  ],
+  "keywords": ["blumen", "generators"],
   "require": {
     "php": ">=5.4.0",
     "illuminate/console": "~5.0",
