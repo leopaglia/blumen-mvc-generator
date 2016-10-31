@@ -63,7 +63,7 @@ class MVCCommand extends Command {
 
         foreach(self::$paths as $stub => $path) {
 
-            $filename = base_path().$path.$this->getClassName().$stub;
+            $filename = base_path().$path.$this->getClassName().$stub.'.php';
 
             if ($this->alreadyExists($filename)) {
                 $this->error($filename.' already exists!');
