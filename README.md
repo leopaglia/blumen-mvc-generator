@@ -53,18 +53,15 @@ app
 |         +-- Device.php
 |
 |-- Services
-|    |
 |    +- DeviceService.php
 |    |
 |    +- Dependencies
 |          +-- DeviceService.php
 |
 +-- Repositories
-|    |
 |    +- DeviceRepository.php
 |
 +-- Models
-     |
      +- Device.php
 ```
 
