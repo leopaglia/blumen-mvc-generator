@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Services\Dependencies\{{class}}ServiceDependencies as Dependencies;
+use App\Services\Dependencies\{{class}}Service as Dependencies;
 
 /**
  * Class {{class}}Service

@@ -8,7 +8,7 @@ use App\Repositories\{{class}}Repository;
  * Class {{class}}Service
  * @package App\Services\Dependencies
  */
-class {{class}}ServiceDependencies {
+class {{class}}Service {
 
     /**
      * @var {{class}}Repository ${{class}}Repository
