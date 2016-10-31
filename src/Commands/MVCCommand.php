@@ -43,7 +43,8 @@ class MVCCommand extends Command {
         ['Service', 'Service', '/app/Services/'],
         ['ServiceDependencies', 'Service', '/app/Services/Dependencies/'],
         ['Repository', 'Repository', '/app/Repositories/'],
-        ['Model', '', '/app/Models/']
+        ['Model', '', '/app/Models/'],
+        ['Route', '', 'app/Http/Routes/']
     ];
 
     /**
