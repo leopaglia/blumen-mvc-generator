@@ -1,6 +1,6 @@
 <?php
 
-namespace Blumen\Generators;
+namespace Blumen\Generators\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
