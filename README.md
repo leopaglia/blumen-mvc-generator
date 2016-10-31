@@ -34,7 +34,7 @@ Run `php artisan` from the console, and you'll see the new `make:mvc` command.
 ## Example:
 
 ```
-php artisan make:mvc device"
+php artisan make:mvc device
 ```
 
 That will create in your base laravel path:
