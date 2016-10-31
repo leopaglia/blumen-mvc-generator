@@ -33,15 +33,17 @@ class MVCCommand extends Command {
      * Paths where the files will go. Uses convention
      * Keys corresponds to the stubs names
      *
+     * stub = [stub, postfix, route]
+     *
      * @var array
      */
-    static protected $paths = [
-        'Controller' => '/app/Http/Controllers/',
-        'ControllerDependencies' => '/app/Http/Controllers/Dependencies/',
-        'Service' => '/app/Services/',
-        'ServiceDependencies' => '/app/Services/Dependencies/',
-        'Repository' => '/app/Repositories/',
-        'Model' => '/app/Models/',
+    static protected $stubs = [
+        ['Controller', 'Controller', '/app/Http/Controllers/'],
+        ['ControllerDependencies', 'Controller', '/app/Http/Controllers/Dependencies/'],
+        ['Service', 'Service', '/app/Services/'],
+        ['ServiceDependencies', 'Service', '/app/Services/Dependencies/'],
+        ['Repository', 'Repository', '/app/Repositories/'],
+        ['Model', '', '/app/Models/']
     ];
 
     /**
@@ -61,16 +63,20 @@ class MVCCommand extends Command {
      */
     public function fire() {
 
-        foreach(self::$paths as $stub => $path) {
+        foreach(self::$stubs as $stub) {
 
-            $filename = base_path().$path.$this->getClassName().$stub.'.php';
+            $stubName = $stub[0];
+            $postfix = $stub[1];
+            $path = $stub[2];
+
+            $filename = base_path().$path.$this->getClassName().$postfix.'.php';
 
             if ($this->alreadyExists($filename)) {
                 $this->error($filename.' already exists!');
                 return false;
             }
 
-            $file = $this->replaceClassName($this->getStub($stub));
+            $file = $this->replaceClassName($this->getStub($stubName));
             $this->makeDirectory($path);
             $this->files->put($filename, $file);
 
