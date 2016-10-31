@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Services\Dependencies;
+namespace App\Services\Dependencies;
 
-use App\Services\{{class}}Repository;
+use App\Repositories\{{class}}Repository;
 
 /**
  * Class {{class}}Service
- * @package App\Http\Services\Dependencies
+ * @package App\Services\Dependencies
  */
 class {{class}}ServiceDependencies {
 

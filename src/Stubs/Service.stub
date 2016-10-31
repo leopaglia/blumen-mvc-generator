@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Services;
+namespace App\Services;
 
-use App\Http\Controllers\Dependencies\{{class}}ServiceDependencies as Dependencies;
+use App\Services\Dependencies\{{class}}ServiceDependencies as Dependencies;
 
 /**
  * Class {{class}}Service
- * @package App\Http\Services
+ * @package App\Services
  */
 class {{class}}Service extends Dependencies {
 
