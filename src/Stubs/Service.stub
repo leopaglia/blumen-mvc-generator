@@ -2,7 +2,7 @@
 
 namespace App\Http\Services;
 
-use App\Http\Controllers\Dependencies\{{class}}Service as Dependencies;
+use App\Http\Controllers\Dependencies\{{class}}ServiceDependencies as Dependencies;
 
 /**
  * Class {{class}}Service

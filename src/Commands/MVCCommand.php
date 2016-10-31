@@ -37,11 +37,11 @@ class MVCCommand extends Command {
      */
     static protected $paths = [
         'Controller' => '/app/Http/Controllers/',
-        'ControllerDependency' => '/app/Http/Controllers/Dependencies',
-        'Service' => '/app/Services',
-        'ServiceDependency' => '/app/Services/Dependencies',
-        'Repository' => '/app/Repositories',
-        'Model' => '/app/Models',
+        'ControllerDependencies' => '/app/Http/Controllers/Dependencies/',
+        'Service' => '/app/Services/',
+        'ServiceDependencies' => '/app/Services/Dependencies/',
+        'Repository' => '/app/Repositories/',
+        'Model' => '/app/Models/',
     ];
 
     /**
