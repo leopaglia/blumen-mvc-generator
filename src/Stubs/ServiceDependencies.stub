@@ -13,7 +13,7 @@ class {{class}}Service {
     /**
      * @var {{class}}Repository ${{lowercaseClass}}Repository
      */
-    protected ${{class}}Repository;
+    protected ${{lowercaseClass}}Repository;
 
     public function __construct({{class}}Repository ${{lowercaseClass}}Repository) {
         $this->{{lowercaseClass}}Repository = ${{lowercaseClass}}Repository;
