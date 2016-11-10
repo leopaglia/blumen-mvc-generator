@@ -116,7 +116,9 @@ class MVCCommand extends Command {
      * @return string
      */
     protected function replaceClassName($stub) {
-        return str_replace('{{class}}', $this->getClassName(), $stub);
+        $c = str_replace('{{class}}', $this->getClassName(), $stub);
+        $c = str_replace('{{lowercaseClass}}', lcfirst($this->getClassName()), $c);
+        return $c;
     }
 
     /**

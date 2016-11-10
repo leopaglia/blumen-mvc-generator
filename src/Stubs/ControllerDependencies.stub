@@ -14,10 +14,10 @@ class {{class}}Controller extends BaseController {
     /**
      * @var {{class}}Service ${{class}}Service
      */
-    protected ${{class}}Service;
+    protected ${{lowercaseClass}}Service;
 
-    public function __construct({{class}}Service ${{class}}Service) {
-        $this->{{class}}Service = ${{class}}Service;
+    public function __construct({{class}}Service ${{lowercaseClass}}Service) {
+        $this->{{lowercaseClass}}Service = ${{lowercaseClass}}Service;
     }
 
 }

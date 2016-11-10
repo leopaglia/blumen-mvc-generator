@@ -11,12 +11,12 @@ use App\Repositories\{{class}}Repository;
 class {{class}}Service {
 
     /**
-     * @var {{class}}Repository ${{class}}Repository
+     * @var {{class}}Repository ${{lowercaseClass}}Repository
      */
     protected ${{class}}Repository;
 
-    public function __construct({{class}}Repository ${{class}}Repository) {
-        $this->{{class}}Repository = ${{class}}Repository;
+    public function __construct({{class}}Repository ${{lowercaseClass}}Repository) {
+        $this->{{lowercaseClass}}Repository = ${{lowercaseClass}}Repository;
     }
 
 }
