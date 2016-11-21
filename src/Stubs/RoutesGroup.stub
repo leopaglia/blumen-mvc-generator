@@ -1,4 +1,5 @@
 
+
 $app->group(['namespace' => 'App\Http\Controllers', 'prefix' => '{{lowercaseClass}}'], function ($app) {
 //    require __DIR__ . '/{{class}}.php';
 });
