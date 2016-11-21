@@ -59,12 +59,15 @@ class MVCCommand extends Command {
     }
 
     /**
+     * @TODO: perform validations and error handling
+     * 
      * Execute the console command.
      *
      * @return mixed
      */
     public function fire() {
 
+        // create new files
         foreach(self::$stubs as $stub) {
 
             $stubName = $stub[0];
@@ -84,6 +87,11 @@ class MVCCommand extends Command {
 
             $this->info($filename.' created successfully.');
         }
+
+        // append to routes groups
+        $routesGroupPath = base_path().'/app/Http/Routes/_groups.php';
+        $file = $this->replaceClassName($this->getStub('RoutesGroup'));
+        $this->files->append($routesGroupPath, $file);
 
         $this->info('All ready!');
         return true;
