@@ -45,7 +45,9 @@ class MVCCommand extends Command {
         ['Repository', 'Repository', '/app/Repositories/'],
         ['RepositoryInterface', 'RepositoryInterface', '/app/Repositories/Interfaces/'],
         ['Model', '', '/app/Models/'],
-        ['Route', '', '/app/Http/Routes/']
+        ['Route', '', '/app/Http/Routes/'],
+        ['Factory', 'Factory', '/database/factories/'],
+        ['Seeder', 'TableSeeder', '/database/seeds/']
     ];
 
     /**
@@ -60,7 +62,7 @@ class MVCCommand extends Command {
 
     /**
      * @TODO: perform validations and error handling
-     * 
+     *
      * Execute the console command.
      *
      * @return mixed
