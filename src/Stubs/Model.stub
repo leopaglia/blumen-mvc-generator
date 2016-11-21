@@ -9,11 +9,11 @@ use App\Models\Traits\LightModel;
  * Class {{class}}
  * @package App\Models
  */
-class {{class}} extends Model {
+class {{class}} extends Model
+{
     use LightModel;
 
     protected $table = '{{lowercaseClass}}';
     protected $guarded = ['id'];
     public $timestamps = false;
-
 }

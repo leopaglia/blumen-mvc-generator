@@ -3,11 +3,13 @@
 namespace App\Repositories;
 
 use App\Repositories\Base\BaseRepository;
+use App\Repositories\Interfaces\{{class}}Interface;
 
 /**
  * Class {{class}}Repository
  * @package App\Repositories
  */
-class {{class}}Repository extends BaseRepository {
+class {{class}}Repository extends BaseRepository implements {{class}}Interface
+{
 
 }

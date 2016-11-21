@@ -9,8 +9,8 @@ use Laravel\Lumen\Routing\Controller as BaseController;
  * Class {{class}}Controller
  * @package App\Http\Controllers\Dependencies
  */
-class {{class}}Controller extends BaseController {
-
+class {{class}}Controller extends BaseController
+{
     /**
      * @var {{class}}Service ${{class}}Service
      */
@@ -19,5 +19,4 @@ class {{class}}Controller extends BaseController {
     public function __construct({{class}}Service ${{lowercaseClass}}Service) {
         $this->{{lowercaseClass}}Service = ${{lowercaseClass}}Service;
     }
-
 }

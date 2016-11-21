@@ -8,6 +8,7 @@ use App\Services\Dependencies\{{class}}Service as Dependencies;
  * Class {{class}}Service
  * @package App\Services
  */
-class {{class}}Service extends Dependencies {
+class {{class}}Service extends Dependencies
+{
 
 }

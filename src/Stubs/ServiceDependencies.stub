@@ -8,8 +8,8 @@ use App\Repositories\{{class}}Repository;
  * Class {{class}}Service
  * @package App\Services\Dependencies
  */
-class {{class}}Service {
-
+class {{class}}Service
+{
     /**
      * @var {{class}}Repository ${{lowercaseClass}}Repository
      */
@@ -18,5 +18,4 @@ class {{class}}Service {
     public function __construct({{class}}Repository ${{lowercaseClass}}Repository) {
         $this->{{lowercaseClass}}Repository = ${{lowercaseClass}}Repository;
     }
-
 }
