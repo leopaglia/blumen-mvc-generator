@@ -5,63 +5,7 @@ namespace App\Repositories\Interfaces;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
-interface {{class}}RepositoryInterface
+interface {{class}}RepositoryInterface extends BaseRepositoryInterface
 {
-    /**
-     * Return an instance of the model
-     *
-     * @return Model
-     */
-    public function getModel();
 
-    /**
-     * Return every entity
-     *
-     * @return Collection
-     */
-    public function findAll();
-
-    /**
-     * Find one entity by key value
-     *
-     * @param $key
-     * @param $value
-     * @return mixed
-     */
-    public function findOneBy($key, $value);
-
-    /**
-     * Find many entities by key value
-     *
-     * @param $key
-     * @param $value
-     * @return Collection
-     */
-    public function findBy($key, $value);
-
-    /**
-     * Find an entity by id
-     *
-     * @param $id
-     * @return mixed
-     */
-    public function findById($id);
-
-    /**
-     * Save a model
-     *
-     * @param Model $model
-     * @return bool
-     */
-    public function save(Model $model);
-
-    /**
-     * Create a model and save it with the $attributes attributes.
-     * Attributes should be mass assignable.
-     *
-     * @param array $attributes
-     * @return Model
-     * @throws \Exception
-     */
-    public function create(array $attributes = []);
 }

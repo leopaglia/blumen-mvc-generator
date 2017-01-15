@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Repositories;
+
+use App\Repositories\Base\BaseCacheDecorator;
+use App\Repositories\Interfaces\{{class}}RepositoryInterface;
+
+/**
+ * Class {{class}}Repository
+ * @package App\Repositories
+ */
+class {{class}}RepositoryCache extends BaseCacheDecorator implements {{class}}RepositoryInterface
+{
+
+}

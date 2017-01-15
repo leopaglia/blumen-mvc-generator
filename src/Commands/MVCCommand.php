@@ -9,6 +9,13 @@ use Symfony\Component\Console\Input\InputArgument;
 class MVCCommand extends Command {
 
     /**
+     * Files created until now. Used for cleanup in case of errors.
+     *
+     * @var array
+     */
+    protected $created = [];
+
+    /**
      * The console command name.
      *
      * @var string
@@ -44,6 +51,7 @@ class MVCCommand extends Command {
         ['ServiceDependencies', 'Service', '/app/Services/Dependencies/'],
         ['Repository', 'Repository', '/app/Repositories/'],
         ['RepositoryInterface', 'RepositoryInterface', '/app/Repositories/Interfaces/'],
+        ['RepositoryCache', 'RepositoryCache', '/app/Repositories/Decorators/'],
         ['Model', '', '/app/Models/'],
         ['Route', '', '/app/Http/Routes/'],
         ['Factory', 'Factory', '/database/factories/'],
@@ -61,42 +69,55 @@ class MVCCommand extends Command {
     }
 
     /**
-     * @TODO: perform validations and error handling
-     *
      * Execute the console command.
      *
-     * @return mixed
+     * @return bool
      */
     public function fire() {
 
-        // create new files
-        foreach(self::$stubs as $stub) {
+        try {
+            // create new files
+            foreach(self::$stubs as $stub) {
 
-            $stubName = $stub[0];
-            $postfix = $stub[1];
-            $path = $stub[2];
+                $stubName = $stub[0];
+                $postfix = $stub[1];
+                $path = $stub[2];
 
-            $filename = base_path().$path.$this->getClassName().$postfix.'.php';
+                $filename = base_path().$path.$this->getClassName().$postfix.'.php';
 
-            if ($this->alreadyExists($filename)) {
-                $this->error($filename.' already exists!');
-                return false;
+                if ($this->alreadyExists($filename)) {
+                    throw new \Exception($filename.' already exists!');
+                }
+
+                $file = $this->replaceClassName($this->getStub($stubName));
+                $this->makeDirectory($path);
+                $this->files->put($filename, $file);
+
+                $this->info($filename.' created successfully.');
+                $this->created[] = $filename;
             }
 
-            $file = $this->replaceClassName($this->getStub($stubName));
-            $this->makeDirectory($path);
-            $this->files->put($filename, $file);
-
-            $this->info($filename.' created successfully.');
+            $this->info('All ready!');
+            return true;
         }
+        catch (\Exception $e) {
+            $this->error($e->getMessage());
+            $this->info('Cleaning up created files...');
+            $this->cleanup();
+            return false;
+        }
+    }
 
-        // append to routes groups
-        $routesGroupPath = base_path().'/app/Http/Routes/_groups.php';
-        $file = $this->replaceClassName($this->getStub('RoutesGroup'));
-        $this->files->append($routesGroupPath, $file);
-
-        $this->info('All ready!');
-        return true;
+    /**
+     * Delete already created files in case of error.
+     */
+    protected function cleanup() {
+        try {
+            $this->files->delete($this->created);
+        }
+        catch (\Exception $e) {
+            $this->info("Sorry, could not delete the created files... :(");
+        }
     }
 
     /**

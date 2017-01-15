@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Traits\LightModel;
 
 /**
  * Class {{class}}
@@ -11,7 +10,7 @@ use App\Models\Traits\LightModel;
  */
 class {{class}} extends Model
 {
-    use LightModel;
+    use Traits\LightModel;
 
     protected $table = '{{lowercaseClass}}';
     protected $guarded = ['id'];
