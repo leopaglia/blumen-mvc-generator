@@ -4,7 +4,7 @@
 
 ```
 "require": {
-    "Blumen/Generators": "dev-master"
+    "blumen/generators": "dev-master"
 },
 "repositories": [
     {
@@ -38,7 +38,7 @@ php artisan make:mvc device
 ```
 
 That will create in your base laravel path:
-
+-- OUTDATED
 ```
 app
 |-- Http
