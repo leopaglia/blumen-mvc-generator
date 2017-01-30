@@ -23,7 +23,7 @@ class GeneratorServiceProvider extends ServiceProvider {
     }
 
     /**
-     * Register the make:seed generator.
+     * Register the make:mvc generator command.
      */
     private function registerMVCGenerator() {
         $this->app->singleton('command.makemvc', function ($app) {
