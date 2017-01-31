@@ -170,7 +170,7 @@ abstract class BaseGeneratorCommand extends Command
         }
 
         $this->makeDirectory($path);
-        $this->files->put($fullpath, $content);
+        $this->files->put($path, $content);
 
         $this->info($fullpath.' created successfully.');
         $this->created[] = $fullpath;
