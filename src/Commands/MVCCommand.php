@@ -23,7 +23,7 @@ class MVCCommand extends BaseGeneratorCommand
      *
      * @var string $routingPath
      */
-    protected $routingPath = '../Config/BaseFileRouting.php';
+    protected $routingPath = '/../Config/BaseFileRouting.php';
 
     /**
      * @inheritdoc

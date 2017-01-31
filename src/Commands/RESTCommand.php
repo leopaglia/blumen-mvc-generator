@@ -23,7 +23,7 @@ class RESTCommand extends BaseGeneratorCommand
      *
      * @var string $routingPath
      */
-    protected $routingPath = '../Config/RESTFileRouting.php';
+    protected $routingPath = '/../Config/RESTFileRouting.php';
 
     /**
      * @inheritdoc

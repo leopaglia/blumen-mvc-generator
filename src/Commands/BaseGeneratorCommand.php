@@ -46,7 +46,7 @@ abstract class BaseGeneratorCommand extends Command
     {
         parent::__construct();
         $this->files = $files;
-        $this->routing = require $this->routingPath;
+        $this->routing = require __DIR__ . $this->routingPath;
     }
 
     /**
