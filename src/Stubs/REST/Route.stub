@@ -1,0 +1,21 @@
+<?php
+
+$app->get('/', [
+    'uses' => '{{class}}Controller@getAll'
+]);
+
+$app->get('/{id}', [
+    'uses' => '{{class}}Controller@get'
+]);
+
+$app->post('/', [
+    'uses' => '{{class}}Controller@create'
+]);
+
+$app->put('/{id}', [
+    'uses' => '{{class}}Controller@update'
+]);
+
+$app->delete('/{id}', [
+    'uses' => '{{class}}Controller@delete'
+]);

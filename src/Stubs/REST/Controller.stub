@@ -1,0 +1,159 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Services\{{class}}Service;
+
+/**
+ * Class {{class}}Controller
+ * @package App\Http\Controllers
+ */
+class {{class}}Controller
+{
+    /**
+     * @var {{class}}Service ${{class}}Service
+     */
+    protected ${{lowercaseClass}}Service;
+
+    public function __construct({{class}}Service ${{lowercaseClass}}Service)
+    {
+        $this->{{lowercaseClass}}Service = ${{lowercaseClass}}Service;
+    }
+
+    /**
+     * @SWG\Get(
+     *   path="/{{lowercaseClass}}",
+     *   description="Get every {{lowercaseClass}}",
+     *   operationId="getAll",
+     *   produces={"application/json"},
+     *   @SWG\Response(
+     *     response=200,
+     *     description="Success",
+     *     @SWG\Schema(
+     *       type="array",
+     *       @SWG\Items(ref="#/definitions/{{class}}")
+     *     )
+     *   )
+     * )
+     */
+    public function getAll()
+    {
+       return $this->{{lowercaseClass}}Service->getAll();
+    }
+
+    /**
+     * @SWG\Get(
+     *   path="/{{lowercaseClass}}/{id}",
+     *   description="Get a {{lowercaseClass}} by id",
+     *   operationId="get",
+     *   produces={"application/json"},
+     *   @SWG\Parameter(
+     *     description="ID of {{lowercaseClass}} to return",
+     *     in="path",
+     *     name="id",
+     *     required=true,
+     *     type="integer"
+     *   ),
+     *   @SWG\Response(
+     *     response=200,
+     *     description="Success",
+     *     @SWG\Schema(
+     *       type="object",
+     *       @SWG\Items(ref="#/definitions/{{class}}")
+     *     )
+     *   ),
+     *   @SWG\Response(
+     *     response="404",
+     *     description="Resource not found"
+     *   )
+     * )
+     */
+    public function get($id)
+    {
+       ${{lowercaseClass}} = $this->{{lowercaseClass}}Service->get($id);
+       return empty(${{lowercaseClass}}) ? response('Resource not found', 404) : ${{lowercaseClass}};
+    }
+
+    /**
+     * @SWG\Post(
+     *   path="/{{lowercaseClass}}",
+     *   operationId="create",
+     *   description="Create a new {{lowercaseClass}}",
+     *   consumes={"application/json"},
+     *   produces={application/json"},
+     *   @SWG\Parameter(
+     *     name="body",
+     *     in="body",
+     *     description="{{class}} fields",
+     *     required=true,
+     *     @SWG\Schema(ref="#/definitions/{{class}}"),
+     *   ),
+     *   @SWG\Response(
+     *     response=201,
+     *     description="Created",
+     *   )
+     * )
+     */
+    public function create(Request $request)
+    {
+        $data = $request->input();
+        return response($this->{{lowercaseClass}}Service->create($data), 201);
+    }
+
+    /**
+     * @SWG\Put(
+     *   path="/{{lowercaseClass}}/{id}",
+     *   operationId="update",
+     *   description="Update a {{lowercaseClass}} by id",
+     *   consumes={"application/json"},
+     *   produces={application/json"},
+     *   @SWG\Parameter(
+     *     name="id",
+     *     in="path",
+     *     description="id of the {{lowercaseClass}} to update",
+     *     required=true,
+     *     type="integer"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="body",
+     *     in="body",
+     *     description="{{class}} fields to update",
+     *     required=true,
+     *     @SWG\Schema(ref="#/definitions/{{class}}"),
+     *   ),
+     *   @SWG\Response(
+     *     response=200,
+     *     description="Success",
+     *   )
+     * )
+     */
+    public function update(Request $request, $id)
+    {
+        $data = $request->input();
+        $this->{{lowercaseClass}}Service->update($id, $data);
+    }
+
+    /**
+     * @SWG\Delete(
+     *   path="/{{lowercaseClass}}/{id}",
+     *   description="Deletes a {{lowercaseClass}} by id",
+     *   operationId="delete",
+     *   @SWG\Parameter(
+     *     description="{{class}} id to delete",
+     *     in="path",
+     *     name="id",
+     *     required=true,
+     *     type="integer"
+     *   ),
+     *   @SWG\Response(
+     *     response=204,
+     *     description="Deleted"
+     *   )
+     * )
+     */
+    public function delete($id)
+    {
+        $this->{{lowercaseClass}}Service->delete($id);
+        return response('', 204);
+    }
+}

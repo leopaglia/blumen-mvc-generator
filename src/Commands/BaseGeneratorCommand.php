@@ -31,6 +31,13 @@ abstract class BaseGeneratorCommand extends Command
     protected $routing;
 
     /**
+     * The location of the routing array
+     *
+     * @var string $routingPath
+     */
+    protected $routingPath;
+
+    /**
      * Create a new command instance.
      *
      * @param Filesystem $files
@@ -39,7 +46,7 @@ abstract class BaseGeneratorCommand extends Command
     {
         parent::__construct();
         $this->files = $files;
-        $this->routing = require '../Config/FileRouting.php';
+        $this->routing = require $this->routingPath;
     }
 
     /**

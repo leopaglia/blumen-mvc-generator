@@ -1,0 +1,76 @@
+<?php
+
+namespace App\Services;
+
+use App\Repositories\{{class}}Repository;
+
+/**
+ * Class {{class}}Service
+ * @package App\Services
+ */
+class {{class}}Service extends Dependencies
+{
+    /**
+     * @var {{class}}Repository ${{lowercaseClass}}Repository
+     */
+    protected ${{lowercaseClass}}Repository;
+
+    public function __construct({{class}}Repository ${{lowercaseClass}}Repository) {
+        $this->{{lowercaseClass}}Repository = ${{lowercaseClass}}Repository;
+    }
+    
+    /**
+     * Get every {{lowercaseClass}}s.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getAll()
+    {
+        return $this->repository->findAll();
+    }
+    
+    /**
+     * Get a {{lowercaseClass}} by id
+     *
+     * @param $id
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function get($id)
+    {
+        return $this->repository->findById($id);
+    }
+    
+    /**
+     * Create a {{lowercaseClass}} and save it to the database
+     *
+     * @param $data
+     * @return integer
+     */
+    public function create($data)
+    {
+        return $this->repository->create($data)->getAttribute('id');
+    }
+    
+    /**
+     * Update a {{lowercaseClass}} by id
+     *
+     * @param $id
+     * @param $data
+     * @return bool
+     */
+    public function update($id, $data)
+    {
+        return $this->repository->update($id, $data);
+    }
+    
+    /**
+     * Delete a {{lowercaseClass}} by id
+     *
+     * @param $id
+     * @return bool
+     */
+    public function delete($id)
+    {
+        return $this->repository->deleteById($id);
+    }
+}

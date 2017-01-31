@@ -3,67 +3,57 @@
 return [
     'route' => [
         [
-            'stub' => 'Route',
+            'stub' => 'Base/Route',
             'path' => '/app/Http/Routes',
             'filename' => '{{class}}.php'
         ]
     ],
     'controller' => [
         [
-            'stub' => 'Controller',
+            'stub' => 'Base/Controller',
             'path' => '/app/Http/Controllers',
-            'filename' => '{{class}}Controller.php'
-        ],
-        [
-            'stub' => 'ControllerDependencies',
-            'path' => '/app/Http/Controllers/Dependencies',
             'filename' => '{{class}}Controller.php'
         ]
     ],
     'service' => [
         [
-            'stub' => 'Service',
+            'stub' => 'Base/Service',
             'path' => '/app/Services',
-            'filename' => '{{class}}Service.php'
-        ],
-        [
-            'stub' => 'ServiceDependencies',
-            'path' => '/app/Services/Dependencies',
             'filename' => '{{class}}Service.php'
         ]
     ],
     'repository' => [
         [
-            'stub' => 'Repository',
+            'stub' => 'Base/Repository',
             'path' => '/app/Repositories',
             'filename' => '{{class}}Repository.php'
         ],
         [
-            'stub' => 'RepositoryInterface',
+            'stub' => 'Base/RepositoryInterface',
             'path' => '/app/Repositories/Contracts',
             'filename' => '{{class}}RepositoryInterface.php'
         ],
         [
-            'stub' => 'RepositoryCache',
+            'stub' => 'Base/RepositoryCache',
             'path' => '/app/Repositories/Decorators',
             'filename' => '{{class}}RepositoryCache.php'
         ]
     ],
     'model' => [
         [
-            'stub' => 'Model',
+            'stub' => 'Base/Model',
             'path' => '/app/Models',
             'filename' => '{{class}}.php'
         ]
     ],
     'db' => [
         [
-            'stub' => 'Factory',
+            'stub' => 'Base/Factory',
             'path' => '/database/factories',
             'filename' => '{{class}}Factory.php'
         ],
         [
-            'stub' => 'Seeder',
+            'stub' => 'Base/Seeder',
             'path' => '/database/seeds',
             'filename' => '{{class}}TableSeeder.php'
         ]
