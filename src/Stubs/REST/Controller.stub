@@ -80,7 +80,7 @@ class {{class}}Controller
      *   operationId="create",
      *   description="Create a new {{lowercaseClass}}",
      *   consumes={"application/json"},
-     *   produces={application/json"},
+     *   produces={"application/json"},
      *   @SWG\Parameter(
      *     name="body",
      *     in="body",
@@ -106,7 +106,7 @@ class {{class}}Controller
      *   operationId="update",
      *   description="Update a {{lowercaseClass}} by id",
      *   consumes={"application/json"},
-     *   produces={application/json"},
+     *   produces={"application/json"},
      *   @SWG\Parameter(
      *     name="id",
      *     in="path",
