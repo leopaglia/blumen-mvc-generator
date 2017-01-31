@@ -159,7 +159,7 @@ abstract class BaseGeneratorCommand extends Command
      */
     protected function createFile($stubname, $filename, $path)
     {
-        $path = $this->replaceClassName($path);
+        $path = base_path() . $this->replaceClassName($path);
         $filename = $this->replaceClassName($filename);
         $content = $this->replaceClassName($this->getStub($stubname));
 
@@ -170,7 +170,7 @@ abstract class BaseGeneratorCommand extends Command
         }
 
         $this->makeDirectory($path);
-        $this->files->put($path, $content);
+        $this->files->put($fullpath, $content);
 
         $this->info($fullpath.' created successfully.');
         $this->created[] = $fullpath;
