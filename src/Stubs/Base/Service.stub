@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Services\Dependencies;
+namespace App\Services;
 
 use App\Repositories\{{class}}Repository;
 
 /**
  * Class {{class}}Service
- * @package App\Services\Dependencies
+ * @package App\Services
  */
-class {{class}}Service
+class {{class}}Service extends Dependencies
 {
     /**
      * @var {{class}}Repository ${{lowercaseClass}}Repository
