@@ -8,7 +8,7 @@ use App\Repositories\{{class}}Repository;
  * Class {{class}}Service
  * @package App\Services
  */
-class {{class}}Service extends Dependencies
+class {{class}}Service
 {
     /**
      * @var {{class}}Repository ${{lowercaseClass}}Repository
@@ -26,7 +26,7 @@ class {{class}}Service extends Dependencies
      */
     public function getAll()
     {
-        return $this->repository->findAll();
+        return $this->${{lowercaseClass}}Repository->findAll();
     }
     
     /**
@@ -37,7 +37,7 @@ class {{class}}Service extends Dependencies
      */
     public function get($id)
     {
-        return $this->repository->findById($id);
+        return $this->${{lowercaseClass}}Repository->findById($id);
     }
     
     /**
@@ -48,7 +48,7 @@ class {{class}}Service extends Dependencies
      */
     public function create($data)
     {
-        return $this->repository->create($data)->getAttribute('id');
+        return $this->${{lowercaseClass}}Repository->create($data)->getAttribute('id');
     }
     
     /**
@@ -60,7 +60,7 @@ class {{class}}Service extends Dependencies
      */
     public function update($id, $data)
     {
-        return $this->repository->update($id, $data);
+        return $this->${{lowercaseClass}}Repository->update($id, $data);
     }
     
     /**
@@ -71,6 +71,6 @@ class {{class}}Service extends Dependencies
      */
     public function delete($id)
     {
-        return $this->repository->deleteById($id);
+        return $this->${{lowercaseClass}}Repository->deleteById($id);
     }
 }
