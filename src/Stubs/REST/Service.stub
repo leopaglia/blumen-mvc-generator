@@ -26,7 +26,7 @@ class {{class}}Service
      */
     public function getAll()
     {
-        return $this->${{lowercaseClass}}Repository->findAll();
+        return $this->{{lowercaseClass}}Repository->findAll();
     }
     
     /**
@@ -37,7 +37,7 @@ class {{class}}Service
      */
     public function get($id)
     {
-        return $this->${{lowercaseClass}}Repository->findById($id);
+        return $this->{{lowercaseClass}}Repository->findById($id);
     }
     
     /**
@@ -48,7 +48,7 @@ class {{class}}Service
      */
     public function create($data)
     {
-        return $this->${{lowercaseClass}}Repository->create($data)->getAttribute('id');
+        return $this->{{lowercaseClass}}Repository->create($data)->getAttribute('id');
     }
     
     /**
@@ -60,7 +60,7 @@ class {{class}}Service
      */
     public function update($id, $data)
     {
-        return $this->${{lowercaseClass}}Repository->update($id, $data);
+        return $this->{{lowercaseClass}}Repository->update($id, $data);
     }
     
     /**
@@ -71,6 +71,6 @@ class {{class}}Service
      */
     public function delete($id)
     {
-        return $this->${{lowercaseClass}}Repository->deleteById($id);
+        return $this->{{lowercaseClass}}Repository->deleteById($id);
     }
 }
