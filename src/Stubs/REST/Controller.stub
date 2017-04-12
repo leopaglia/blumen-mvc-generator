@@ -1,0 +1,52 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Services\{{class}}Service;
+
+/**
+ * Class {{class}}Controller
+ * @package App\Http\Controllers
+ */
+class {{class}}Controller
+{
+    /**
+     * @var {{class}}Service ${{class}}Service
+     */
+    protected ${{lowercaseClass}}Service;
+
+    public function __construct({{class}}Service ${{lowercaseClass}}Service)
+    {
+        $this->{{lowercaseClass}}Service = ${{lowercaseClass}}Service;
+    }
+
+    public function getAll()
+    {
+       return $this->{{lowercaseClass}}Service->getAll();
+    }
+
+    public function get($id)
+    {
+       ${{lowercaseClass}} = $this->{{lowercaseClass}}Service->get($id);
+       return empty(${{lowercaseClass}}) ? response('Resource not found', 404) : ${{lowercaseClass}};
+    }
+
+    public function create(Request $request)
+    {
+        $data = $request->input();
+        return response($this->{{lowercaseClass}}Service->create($data), 201);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data = $request->input();
+        $this->{{lowercaseClass}}Service->update($id, $data);
+    }
+
+    public function delete($id)
+    {
+        $this->{{lowercaseClass}}Service->delete($id);
+        return response('', 204);
+    }
+}

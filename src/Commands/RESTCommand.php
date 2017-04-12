@@ -2,28 +2,28 @@
 
 namespace Blumen\Generators\Commands;
 
-class MVCCommand extends BaseGeneratorCommand 
+class RESTCommand extends BaseGeneratorCommand
 {
     /**
      * The console command name.
      *
      * @var string
      */
-    protected $name = 'make:mvc';
+    protected $name = 'make:rest';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create the entire path of MVC handlers for a request lifetime.';
+    protected $description = 'Create the entire path of REST handlers for a request lifetime.';
 
     /**
      * The location of the routing array
      *
      * @var string $routingPath
      */
-    protected $routingPath = '/../Config/BaseFileRouting.php';
+    protected $routingPath = '/../Config/RESTFileRouting.php';
 
     /**
      * @inheritdoc
