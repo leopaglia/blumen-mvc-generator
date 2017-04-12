@@ -51,7 +51,6 @@ class MVCCommand extends Command {
         ['ServiceDependencies', 'Service', '/app/Services/Dependencies/'],
         ['Repository', 'Repository', '/app/Repositories/'],
         ['RepositoryInterface', 'RepositoryInterface', '/app/Repositories/Contracts/'],
-        ['RepositoryCache', 'RepositoryCache', '/app/Repositories/Decorators/'],
         ['Model', '', '/app/Models/'],
         ['Route', '', '/app/Http/Routes/'],
         ['Factory', 'Factory', '/database/factories/'],
@@ -166,7 +165,6 @@ class MVCCommand extends Command {
      * Build the directory for the class if necessary.
      *
      * @param  string $path
-     * @return string
      */
     protected function makeDirectory($path) {
         if (!$this->files->isDirectory(dirname($path))) {
