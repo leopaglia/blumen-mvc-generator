@@ -32,11 +32,6 @@ return [
             'stub' => 'Base/RepositoryInterface',
             'path' => '/app/Repositories/Contracts',
             'filename' => '{{class}}RepositoryInterface.php'
-        ],
-        [
-            'stub' => 'Base/RepositoryCache',
-            'path' => '/app/Repositories/Decorators',
-            'filename' => '{{class}}RepositoryCache.php'
         ]
     ],
     'model' => [
